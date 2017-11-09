@@ -6,10 +6,10 @@
 #    By: tparand <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/09 17:54:07 by tparand           #+#    #+#              #
-#    Updated: 2017/11/09 17:54:09 by tparand          ###   ########.fr        #
+#    Updated: 2017/11/09 23:30:49 by tparand          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 #!/bin/sh
 
-find . -name '*.sh' -type f -print | rev | cut -f 1 -d '/' | cut --complement -c 1-3 | rev
+find . -name '*.sh' -type f -print | rev | cut -f 1 -d '/' | sed 's/^...//' | rev
