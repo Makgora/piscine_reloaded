@@ -1,15 +1,26 @@
-#include "stdlib.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tparand <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/11/09 18:09:25 by tparand           #+#    #+#             */
+/*   Updated: 2017/11/09 18:09:30 by tparand          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <stdlib.h>
 
 int		ft_strlen(char *src)
 {
 	int		src_len;
 
 	src_len = 0;
-	while(src[src_len] != '\0')
+	while (src[src_len] != '\0')
 		src_len++;
 	return (src_len);
 }
-
 
 void	*ft_memcpy(void *str1, void *str2, int n)
 {

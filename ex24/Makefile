@@ -1,43 +1,45 @@
-NAME	= libft.a
-SRCS	= ./srcs/
-HEADERS	= ./includes/
-CFILES	= ft_putchar.c	\
-		  ft_putstr.c	\
-		  ft_strcmp.c	\
-		  ft_strlen.c	\
-		  ft_swap.c
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: tparand <marvin@42.fr>                     +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2017/11/09 18:41:17 by tparand           #+#    #+#              #
+#    Updated: 2017/11/09 21:58:48 by tparand          ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
-OFILES	= $(CFILES:.c=.o)
+NAME	= libft.a
+PATH_SRCS	= srcs/
+PATH_HEADERS	= includes/
+SRCS	= $(PATH_SRCS)ft_putchar.c	\
+		  $(PATH_SRCS)ft_putstr.c	\
+		  $(PATH_SRCS)ft_strcmp.c	\
+		  $(PATH_SRCS)ft_strlen.c	\
+		  $(PATH_SRCS)ft_swap.c
+
+HEADERS = $(PATH_HEADERS)ft_h.h
+OBJS	= $(SRCS:.c=.o)
 CC		= gcc
-FLAGS	= -Wall -Wextra -Werror
+CFLAGS	= -c -Wall -Wextra -Werror
 
 all: $(NAME)
 
-$(NAME):
-	@echo
-	@echo ">> Compilation CFILES <<"
-	@echo
-	#$(CC) $(FLAGS) -c $(CFILES) $(HFILES)
-	@echo
-	@echo ">> Making LIBFT.A <<"
-	@echo
-	ar rc $(NAME) $(OFILES)
-	@echo
-	@echo ">> Indexing LIBFT.A <<"
-	@echo
+$(NAME): $(OBJS)
+	ar rc $(NAME) $(OBJS)
 	ranlib $(NAME)
+
+%.o: %.c
+		$(CC) $(CFLAGS) -I $(HEADERS) $< -o $@
+
+.PHONY: clean fclean
+
 clean:
-	@echo
-	@echo ">> Cleaning OFILES <<"
-	@echo
-	rm -Rf $(OFILES)
+	rm -Rf $(OBJS)
 
 fclean: clean
-	@echo
-	@echo ">> Cleaning LIBFT.A <<"
-	@echo
 	rm -Rf $(NAME)
 
 re: fclean all
 
-.PHONY: clean fclean

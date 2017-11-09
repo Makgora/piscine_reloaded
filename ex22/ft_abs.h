@@ -6,12 +6,12 @@
 /*   By: tparand <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 16:42:55 by tparand           #+#    #+#             */
-/*   Updated: 2017/11/07 16:43:54 by tparand          ###   ########.fr       */
+/*   Updated: 2017/11/09 18:23:02 by tparand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_ABS_H
  #define FT_ABS_H
 
- #define (Value) (Value > 0 ? Value : -Value)
+ #define ABS(Value) (Value > 0 ? Value : -Value)
 #endif

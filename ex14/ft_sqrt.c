@@ -1,13 +1,25 @@
-#include "stdio.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tparand <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/11/09 17:51:54 by tparand           #+#    #+#             */
+/*   Updated: 2017/11/09 17:52:00 by tparand          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int	ft_sqrt(int nb)
+int		ft_sqrt(int nb)
 {
-	int	n;
+	int	i;
 
-	n = 0;
-
-		
+	i = 1;
+	while (i <= nb)
+	{
+		if (i * i == nb)
+			return (i);
+		i++;
+	}
+	return (0);
 }
-
-virer les nombres qui n'ont pas de racine
- 
