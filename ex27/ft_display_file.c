@@ -6,14 +6,14 @@
 /*   By: tparand <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/09 21:22:34 by tparand           #+#    #+#             */
-/*   Updated: 2017/11/09 21:23:51 by tparand          ###   ########.fr       */
+/*   Updated: 2017/11/09 22:49:00 by tparand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include <fcntl.h>
 
-int	open_file(int argc, char **argv)
+int		open_file(int argc, char **argv)
 {
 	int	fd;
 
